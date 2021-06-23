@@ -1,0 +1,114 @@
+#path{
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+
+  height: 100vh;
+    
+  #illustration{
+    background: #835AFD;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-direction: column;
+    
+    width: 40%;      
+    padding: 4rem 5rem;
+    
+    strong{
+      color: #FFFFFF;
+      line-height: 42px;
+      font: bold 36px 'Poppins';
+    }
+    
+    img{
+      width: auto;
+      max-height: 320px;
+    }
+    
+    p {
+      font: 400 24px 'Roboto';
+      line-height: 32px;
+      color: #FFFFFF;
+      text-align: left;
+    }
+  }
+  main{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 32px;
+  
+    #conta{
+      height: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: space-evenlsy;
+
+      > img{
+        align-self: center;
+        margin-bottom: 2rem;
+      }
+
+      > p{
+        text-align: center;
+        font: 700 24px 'Poppins', sans-serif;
+        color: #29292E;
+        margin-bottom: 1rem;
+      }
+     
+      #line{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        font: 400 14px 'Roboto';
+        color: #A8A8B3;
+        align-self: center;
+        margin: 1rem 0;
+        
+        &::before, &::after{
+          content: "";
+          flex: 1;
+          height: 1px;
+          background-color: #A8A8B3;          
+        }
+      
+        &::before{
+          margin-right: 16px;
+        }
+      
+        &::after{
+          margin-left: 16px;
+        }
+      } 
+      form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      
+        input{
+          border:1px solid #A8A8B3;
+          border-radius: 8px;
+          padding:13px 12px 13px 16px;
+          
+          margin-bottom: 1rem;
+          
+        }
+
+        p{
+          font: 400 14px 'Roboto', sans-serif;
+          margin-top: 1rem;
+          color: #737380;
+
+          a{
+            color: #E559F9;
+          }
+        }  
+      }
+    } 
+  }
+}
