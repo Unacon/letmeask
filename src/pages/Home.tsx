@@ -5,9 +5,23 @@ import googleIcon from '../assets/img/google-icon.svg';
 import { Button } from '../components/Button';
 
 import  '../assets/css/home.scss'
+import { useHistory } from 'react-router-dom';
+import { auth, firebase } from '../services/firebase';
 
 
 export function Home(){
+  const history = useHistory();
+
+  function handleCreateRoom(){
+    const provider = new firebase.auth.GoogleAuthProvider();
+
+    auth.signInWithPopup(provider).then(result =>{
+      console.log(result);
+      history.push('/rooms/new');
+    });
+  }
+
+
   return(
     <div id='path-home'>
       <aside id='illustration'>
@@ -18,7 +32,7 @@ export function Home(){
       <main>
         <div id='conta'>
         <img src={logo} alt="Logo letmeask"/>
-        <button id='buttonGoogle'>
+        <button id='buttonGoogle' onClick={handleCreateRoom}>
           <img src={googleIcon} alt="Logo da google"/>
           <span>
           Crie sua sala com a Google

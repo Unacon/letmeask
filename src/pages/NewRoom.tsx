@@ -4,6 +4,7 @@ import logo from '../assets/img/logo.svg';
 import { Button } from '../components/Button';
 
 import  '../assets/css/NewRoom.scss'
+import { Link } from 'react-router-dom';
 
 
 export function NewRoom(){
@@ -17,7 +18,7 @@ export function NewRoom(){
       <main>
         <div id='conta'>
         <img src={logo} alt="Logo letmeask"/>
-        <p>Crie uma nova sala</p>
+        <h2>Crie uma nova sala</h2>
         <form>
           <input type='text' placeholder='Nome da sala'/>
           <Button type='submit'>
@@ -25,7 +26,7 @@ export function NewRoom(){
           </Button>
           <p>
             Quer entrar em uma sala já existente? 
-            <a href="http://www.google.com">Clique aqui</a>
+            <Link to="/" >Clique aqui</Link>
           </p>
         </form>
         </div>

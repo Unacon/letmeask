@@ -54,37 +54,13 @@
         margin-bottom: 2rem;
       }
 
-      > p{
+      h2{
         text-align: center;
         font: 700 24px 'Poppins', sans-serif;
         color: #29292E;
         margin-bottom: 1rem;
       }
-     
-      #line{
-        display: flex;
-        align-items: center;
-        width: 100%;
-        font: 400 14px 'Roboto';
-        color: #A8A8B3;
-        align-self: center;
-        margin: 1rem 0;
-        
-        &::before, &::after{
-          content: "";
-          flex: 1;
-          height: 1px;
-          background-color: #A8A8B3;          
-        }
-      
-        &::before{
-          margin-right: 16px;
-        }
-      
-        &::after{
-          margin-left: 16px;
-        }
-      } 
+
       form{
         display: flex;
         flex-direction: column;
