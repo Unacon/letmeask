@@ -9,7 +9,7 @@ type AuthContextProps ={
 type UserType = {
   displayName: string,
   photoURL : string,
-  uid: string,
+  id: string,
 };
 
 type AuthorContextType = {
@@ -32,7 +32,7 @@ export function AuthContext (props:AuthContextProps){
         };
         
         setUser({
-          uid: uid,
+          id: uid,
           displayName: displayName,
           photoURL: photoURL,
         });
@@ -56,7 +56,7 @@ export function AuthContext (props:AuthContextProps){
       };
 
       setUser({
-        uid: uid,
+        id: uid,
         displayName: displayName,
         photoURL: photoURL,
       });
