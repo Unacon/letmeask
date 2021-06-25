@@ -1,20 +1,21 @@
-.button{
-  background-color: #835AFD;
+.button {
+  background-color: #835afd;
   border: 0;
   border-radius: 8px;
   padding: 13px 46px;
-  
-  color:#FFFFFF;
-  
-  font: 400 16px 'Roboto';
+  cursor: pointer;
+
+  color: #ffffff;
+
+  font: 400 16px "Roboto";
 
   transition: filter 0.2s;
 
-  &:not(:disabled):hover{
+  &:not(:disabled):hover {
     filter: brightness(0.9);
   }
 
-  &:disabled{
+  &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
   }

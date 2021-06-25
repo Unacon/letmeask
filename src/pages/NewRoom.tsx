@@ -41,7 +41,7 @@ export function NewRoom(){
       <main>
         <div id='conta'>
           <img src={logo} alt="Logo letmeask"/>
-          <h2>{user?.displayName}</h2>
+          <h2>{user?.name}</h2>
           <h2>Crie uma nova sala</h2>
           <form onSubmit={handleCreateRoom}>
             <input 

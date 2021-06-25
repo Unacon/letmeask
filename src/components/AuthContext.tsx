@@ -7,8 +7,8 @@ type AuthContextProps ={
 }
 
 type UserType = {
-  displayName: string,
-  photoURL : string,
+  name: string,
+  avatar : string,
   id: string,
 };
 
@@ -33,8 +33,8 @@ export function AuthContext (props:AuthContextProps){
         
         setUser({
           id: uid,
-          displayName: displayName,
-          photoURL: photoURL,
+          name: displayName,
+          avatar: photoURL,
         });
       }
     })
@@ -57,8 +57,8 @@ export function AuthContext (props:AuthContextProps){
 
       setUser({
         id: uid,
-        displayName: displayName,
-        photoURL: photoURL,
+        name: displayName,
+        avatar: photoURL,
       });
     }   
   }
