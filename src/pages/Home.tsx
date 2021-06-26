@@ -4,13 +4,13 @@ import logo from '../assets/img/logo.svg';
 import googleIcon from '../assets/img/google-icon.svg';
 import { Button } from '../components/Button';
 import { useHistory } from 'react-router-dom';
-import { AuthorContext } from '../components/AuthContext';
 import { database } from '../services/firebase';
 
 import  '../assets/css/home.scss'
+import { useAuthor } from '../hooks/useAuthor';
 
 export function Home(){
-  const { user, signInWithPopup} = React.useContext(AuthorContext);
+  const { user, signInWithPopup} = useAuthor();
   const history = useHistory();
   const [codeRoom, setCodeRoom] = React.useState('');
 
@@ -33,6 +33,11 @@ export function Home(){
 
     if(!roomRef.exists()){
       alert('Room does not exists.')
+      return;
+    }
+
+    if(roomRef.val().endedAt){
+      alert("Sala ja foi encerrada");
       return;
     }
 

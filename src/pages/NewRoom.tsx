@@ -5,12 +5,11 @@ import { Button } from '../components/Button';
 import { Link, useHistory } from 'react-router-dom';
 import  '../assets/css/NewRoom.scss'
 
-
-import { AuthorContext } from '../components/AuthContext';
 import { database } from '../services/firebase';
+import { useAuthor } from '../hooks/useAuthor';
 
 export function NewRoom(){
-  const {user} = React.useContext(AuthorContext);
+  const {user} = useAuthor();;
   const [nameRoom, setNameRoom] = React.useState('');
   const history = useHistory();
 
