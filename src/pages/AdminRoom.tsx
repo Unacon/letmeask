@@ -23,8 +23,6 @@ export function AdminRoom() {
   
   const {questions, title} = useRoom(roomId);
 
-  console.log(questions);
-
   async function handleDeleteRoom(){
     if(window.confirm("Tem certeza que você deseja excluir essa sala?")){
       await database.ref(`rooms/${roomId}`).update({

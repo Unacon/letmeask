@@ -1,0 +1,10 @@
+- Responsividade
+- Tema Dark
+- Diferenciar entrada na página room para admin e usuário
+- Versão PWA
+- Banco de dados 
+  -> Firebase Database
+  -> SupaBase
+  -> Styles Components
+  -> ESLint, Prettier - video rocketseat
+  -> GitHub README (rocketseat-education/nlw-04-reactjs)

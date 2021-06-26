@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom';
 import { database } from '../services/firebase';
 import { useAuthor } from './useAuthor';
 
@@ -32,16 +33,20 @@ export function useRoom( roomId: string){
   const { user } = useAuthor();
   const [title, setTitle] = React.useState('');
   const [questions, setQuestions] = React.useState<questionType[]>([]);
+  const history = useHistory();  
 
   React.useEffect(()=>{
     const roomRef = database.ref(`rooms/${roomId}`);
 
     //Tentar utilizar children_change inver do value
     roomRef.on('value', room =>{
-      const dataBaseRoom = room.val();
+      const dataBaseRoom = room.val() ?? {};
+     
+      if(dataBaseRoom.endedAt){ // Caso excluida a sala, redireciona todos para Home
+        history.push('/');
+      }
       const fireBaseQuestion : FirebaseQuestionsType = dataBaseRoom.questions ?? {};
-
-
+      
       const parseQuestions = Object.entries(fireBaseQuestion).map(([key,value])=>{
         return{
           id:key,
@@ -56,13 +61,13 @@ export function useRoom( roomId: string){
 
       setTitle(dataBaseRoom.title);
       setQuestions(parseQuestions);
-    })
-
+    }) 
+    
     return () =>{
       roomRef.off('value');
     }
 
-  },[roomId, user?.id])
+  },[roomId, user?.id, history ])
 
   return {
     questions, 

@@ -19,7 +19,6 @@ export function Room() {
   const {user} = useAuthor();
   const [newQuestion, setNewQuestion] = React.useState('');
   const roomId = params.id
-  
   const {questions, title} = useRoom(roomId);
 
   async function handleSetQuestion(event: FormEvent){
