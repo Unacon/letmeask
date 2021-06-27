@@ -8,6 +8,7 @@ import { database } from '../services/firebase';
 
 import  '../assets/css/home.scss'
 import { useAuthor } from '../hooks/useAuthor';
+import { Illustration } from '../components/Illustration';
 
 export function Home(){
   const { user, signInWithPopup} = useAuthor();
@@ -47,11 +48,7 @@ export function Home(){
 
   return(
     <div id='path-home'>
-      <aside id='illustration'>
-          <img src={illustration} alt="illustração do letmeask"/>
-        <strong>Toda pergunta tem uma resposta</strong>
-        <p>Aprenda e compartilhe conhecimento com outras pessoas</p>
-      </aside>
+      <Illustration/>
       <main>
         <div id='conta'>
         <img src={logo} alt="Logo letmeask"/>

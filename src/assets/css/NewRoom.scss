@@ -1,39 +1,11 @@
-#path{
+#path {
   display: flex;
   align-content: center;
   justify-content: space-between;
 
   height: 100vh;
-    
-  #illustration{
-    background: #835AFD;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    flex-direction: column;
-    
-    width: 40%;      
-    padding: 4rem 5rem;
-    
-    strong{
-      color: #FFFFFF;
-      line-height: 42px;
-      font: bold 36px 'Poppins';
-    }
-    
-    img{
-      width: auto;
-      max-height: 320px;
-    }
-    
-    p {
-      font: 400 24px 'Roboto';
-      line-height: 32px;
-      color: #FFFFFF;
-      text-align: left;
-    }
-  }
-  main{
+
+  main {
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -42,49 +14,70 @@
 
     padding: 0 32px;
 
-    #conta{
+    #conta {
       height: 50%;
       display: flex;
       flex-direction: column;
       align-items: stretch;
       justify-content: space-evenlsy;
 
-      > img{
+      > img {
         align-self: center;
-        margin-bottom: 1rem;
-      }      
-
-      h2{
-        text-align: center;
-        font: 700 24px 'Poppins', sans-serif;
-        color: #29292E;
         margin-bottom: 1rem;
       }
 
-      form{
+      .user-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 12px;
+
+        > img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          border: 2px solid #835afd;
+        }
+
+        > h2 {
+          text-align: center;
+          font: 700 24px "Poppins", sans-serif;
+          color: #29292e;
+          margin: 0;
+        }
+      }
+
+      h2 {
+        text-align: center;
+        font: 700 24px "Poppins", sans-serif;
+        color: #29292e;
+        margin-bottom: 1rem;
+      }
+
+      form {
         display: flex;
         flex-direction: column;
         width: 100%;
-      
-        input{
-          border:1px solid #A8A8B3;
+
+        input {
+          border: 1px solid #a8a8b3;
           border-radius: 8px;
-          padding:13px 12px 13px 16px;
-          
+          padding: 13px 12px 13px 16px;
+
           margin-bottom: 1rem;
-          
         }
 
-        p{
-          font: 400 14px 'Roboto', sans-serif;
+        p {
+          font: 400 14px "Roboto", sans-serif;
           margin-top: 1rem;
           color: #737380;
 
-          a{
-            color: #E559F9;
+          a {
+            color: #e559f9;
           }
-        }  
+        }
       }
-    } 
+    }
   }
 }

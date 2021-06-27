@@ -7,6 +7,7 @@ import  '../assets/css/NewRoom.scss'
 
 import { database } from '../services/firebase';
 import { useAuthor } from '../hooks/useAuthor';
+import { Illustration } from '../components/Illustration';
 
 export function NewRoom(){
   const {user} = useAuthor();;
@@ -32,15 +33,14 @@ export function NewRoom(){
 
   return(
     <div id='path'>
-      <aside id='illustration'>
-          <img src={illustration} alt="illustração do letmeask"/>
-        <strong>Toda pergunta tem uma resposta</strong>
-        <p>Aprenda e compartilhe conhecimento com outras pessoas</p>
-      </aside>
+      <Illustration/>
       <main>
         <div id='conta'>
           <img src={logo} alt="Logo letmeask"/>
-          <h2>{user?.name}</h2>
+          <div className='user-info'>
+            <img src={user?.avatar} alt="Avatar perfil"/>
+            <h2>{user?.name}</h2>
+          </div>
           <h2>Crie uma nova sala</h2>
           <form onSubmit={handleCreateRoom}>
             <input 

@@ -1,0 +1,28 @@
+#illustration {
+  background: #835afd;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: column;
+
+  width: 40%;
+  padding: 4rem 5rem;
+
+  strong {
+    color: #ffffff;
+    line-height: 42px;
+    font: bold 36px "Poppins";
+  }
+
+  img {
+    width: auto;
+    max-height: 320px;
+  }
+
+  p {
+    font: 400 24px "Roboto";
+    line-height: 32px;
+    color: #ffffff;
+    text-align: left;
+  }
+}
