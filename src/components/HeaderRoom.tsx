@@ -39,15 +39,14 @@ export function HeaderRoom(props: HeaderRoomType) {
         <img src={logoImg} alt="Letmeask" />
         <div>
           <RoomCode code={params.id} />
-          {props.usuario === "Admin" ? (
+          {props.usuario === "Admin" && (
             <Button isOutlined onClick={handleDeleteRoom}>
               Encerrar sala
             </Button>
-          ) : (
-            <Button isOutlined onClick={handleExitRoom}>
-              Sair da sala
-            </Button>
           )}
+          <Button isOutlined onClick={handleExitRoom}>
+            Sair da sala
+          </Button>
         </div>
       </div>
     </header>
