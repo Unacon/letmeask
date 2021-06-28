@@ -1,11 +1,9 @@
 import React, { FormEvent } from "react";
-import logoImg from "../assets/img/logo.svg";
 import { Button } from "../components/Button";
 
 import "../assets/css/room.scss";
 import { Question } from "../components/Question";
-import { RoomCode } from "../components/RoomCode";
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { database } from "../services/firebase";
 import { useRoom } from "../hooks/useRoom";
 import { useAuthor } from "../hooks/useAuthor";

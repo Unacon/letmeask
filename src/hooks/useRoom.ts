@@ -61,7 +61,7 @@ export function useRoom( roomId: string){
 
       setTitle(dataBaseRoom.title);
       setQuestions(parseQuestions);
-    }) 
+    }); 
     
     return () =>{
       roomRef.off('value');

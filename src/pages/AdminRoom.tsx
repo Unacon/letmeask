@@ -1,14 +1,11 @@
 import React from "react";
-import logoImg from "../assets/img/logo.svg";
 import deleteImg from "../assets/img/delete.svg";
 import checkImg from "../assets/img/check.svg";
 import answerImg from "../assets/img/answer.svg";
-import { Button } from "../components/Button";
 
 import "../assets/css/room.scss";
 import { Question } from "../components/Question";
-import { RoomCode } from "../components/RoomCode";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useRoom } from "../hooks/useRoom";
 import { database } from "../services/firebase";
 import { HeaderRoom } from "../components/HeaderRoom";
