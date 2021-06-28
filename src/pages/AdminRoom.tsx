@@ -2,6 +2,7 @@ import React from "react";
 import deleteImg from "../assets/img/delete.svg";
 import checkImg from "../assets/img/check.svg";
 import answerImg from "../assets/img/answer.svg";
+import emptyQuestions from "../assets/img/empty-questions.svg";
 
 import "../assets/css/room.scss";
 import { Question } from "../components/Question";
@@ -9,21 +10,10 @@ import { useParams } from "react-router-dom";
 import { useRoom } from "../hooks/useRoom";
 import { database } from "../services/firebase";
 import { HeaderRoom } from "../components/HeaderRoom";
+import toast, { Toaster } from "react-hot-toast";
 
 type RoomParams = {
   id: string;
-};
-type questionType = {
-  id: string;
-  author: {
-    name: string;
-    avatar: string;
-  };
-  content: string;
-  isAnswered?: boolean;
-  isHighLighted?: boolean;
-  likeCount: number;
-  likeId: string | undefined;
 };
 
 export function AdminRoom() {
@@ -35,11 +25,25 @@ export function AdminRoom() {
     if (window.confirm("Tem certeza que você deseja excluir essa pergunta?")) {
       await database.ref(`rooms/${roomId}/questions/${questionId}`).remove();
     }
+    toast.error("A questão foi removida.", {
+      style: {
+        color: "#FFFF",
+        background: "#fd5a5a",
+      },
+      duration: 1000,
+    });
   }
 
   async function handleCheckQuestionAsAnswered(questionId: string) {
     await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
       isAnswered: true,
+    });
+    toast.success("A questão respondida.", {
+      style: {
+        color: "#FFFF",
+        background: "#835afd",
+      },
+      duration: 1000,
     });
   }
 
@@ -47,10 +51,18 @@ export function AdminRoom() {
     await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
       isHighLighted: true,
     });
+    toast.success("A questão está marcada.", {
+      style: {
+        color: "#FFFF",
+        background: "#835afd",
+      },
+      duration: 1000,
+    });
   }
 
   return (
     <div id="page-room">
+      <Toaster />
       <HeaderRoom usuario="Admin" />
       <main>
         <div className="room-title">
@@ -119,6 +131,16 @@ export function AdminRoom() {
               </Question>
             );
           })}
+          {questions.length === 0 && (
+            <div className="emptyQuestions">
+              <img src={emptyQuestions} alt="Nenhuma questão" />
+              <h3>Nenhuma pergunta por aqui...</h3>
+              <p>
+                Envie o código dessa sala para seus amigos e comece a respodner
+                perguntas!
+              </p>
+            </div>
+          )}
         </div>
       </main>
     </div>

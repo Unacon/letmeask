@@ -1,7 +1,8 @@
 - Responsividade
 - Tema Dark
-- Diferenciar entrada na página room para admin e usuário
+FEITO - Diferenciar entrada na página room para admin e usuário
 - Versão PWA
+- modal
 - Banco de dados 
   -> Firebase Database
   -> SupaBase

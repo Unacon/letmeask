@@ -8,6 +8,7 @@ import { database } from "../services/firebase";
 import { useRoom } from "../hooks/useRoom";
 import { useAuthor } from "../hooks/useAuthor";
 import { HeaderRoom } from "../components/HeaderRoom";
+import toast, { Toaster } from "react-hot-toast";
 
 type RoomParams = {
   id: string;
@@ -24,6 +25,12 @@ export function Room() {
     event.preventDefault();
 
     if (newQuestion.trim() === "") {
+      toast.error("Escreva algo para perguntar.", {
+        style: {
+          color: "#FFFF",
+          background: "#fd5a5a",
+        },
+      });
       return;
     }
 
@@ -43,6 +50,17 @@ export function Room() {
 
     await database.ref(`rooms/${roomId}/questions`).push(question);
 
+    toast.success(
+      `Sua pergunta: "${question.content}" foi gravada com sucesso. `,
+      {
+        style: {
+          color: "#FFFF",
+          background: "#835afd",
+        },
+        duration: 3000,
+      }
+    );
+
     setNewQuestion("");
   }
 
@@ -54,9 +72,21 @@ export function Room() {
       await database
         .ref(`rooms/${roomId}/questions/${questionId}/like/${likeId}`)
         .remove();
+      toast.error("Seu like foi removido.", {
+        style: {
+          color: "#FFFF",
+          background: "#fd5a5a",
+        },
+      });
     } else {
       await database.ref(`rooms/${roomId}/questions/${questionId}/like`).push({
         authorId: user?.id,
+      });
+      toast.success("Seu like foi adicionado.", {
+        style: {
+          color: "#FFFF",
+          background: "#835afd",
+        },
       });
     }
   }
@@ -65,9 +95,16 @@ export function Room() {
     if (!user) {
       await signInWithPopup();
     }
+    toast.success("Seu like foi adicionado.", {
+      style: {
+        color: "#FFFF",
+        background: "#835afd",
+      },
+    });
   }
   return (
     <div id="page-room">
+      <Toaster />
       <HeaderRoom usuario="Usuario" />
       <main>
         <div className="room-title">

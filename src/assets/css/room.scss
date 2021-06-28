@@ -50,6 +50,25 @@
       }
     }
 
+    .emptyQuestions {
+      display: flex;
+      flex-direction: column;
+      align-content: space-between;
+      width: 400px;
+      align-items: center;
+      text-align: center;
+      margin: auto;
+      padding-top: 32px;
+      gap: 12px;
+
+      h3 {
+        font: 700 18px "Poppins";
+      }
+
+      p {
+        font: 500 14px "Roboto";
+      }
+    }
     form {
       textarea {
         width: 100%;
