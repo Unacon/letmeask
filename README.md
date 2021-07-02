@@ -11,7 +11,7 @@
 <br>
 
 <p align="center">
-  <img alt="Tela Inicial" src="github/TelaInicial.png" width="100%" style="border-radius:25px">
+  <img alt="Tela Inicial" src="github/TelaInicial.png" width="100%">
 </p>
 
 ## ✨ Tecnologias
