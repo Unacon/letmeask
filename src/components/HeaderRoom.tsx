@@ -5,6 +5,7 @@ import { useHistory, useParams } from "react-router-dom";
 
 import logoImg from "../assets/img/logo.svg";
 import { database } from "../services/firebase";
+import { useAuthor } from "../hooks/useAuthor";
 
 type RoomParams = {
   id: string;
@@ -18,6 +19,7 @@ export function HeaderRoom(props: HeaderRoomType) {
   const params = useParams<RoomParams>();
   const roomId = params.id;
   const history = useHistory();
+  const { user } = useAuthor();
 
   async function handleDeleteRoom() {
     if (window.confirm("Tem certeza que você deseja excluir essa sala?")) {
@@ -33,10 +35,16 @@ export function HeaderRoom(props: HeaderRoomType) {
     history.push("/");
   }
 
+  function handleGotoRoom() {
+    if (user?.id) {
+      history.push("/");
+    }
+  }
+
   return (
     <header>
       <div className="content">
-        <img src={logoImg} alt="Letmeask" />
+        <img src={logoImg} alt="Letmeask" onClick={handleGotoRoom} />
         <div>
           <RoomCode code={params.id} />
           {props.usuario === "Admin" && (
