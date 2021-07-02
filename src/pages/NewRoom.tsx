@@ -7,6 +7,7 @@ import "../assets/css/NewRoom.scss";
 import { database } from "../services/firebase";
 import { useAuthor } from "../hooks/useAuthor";
 import { Illustration } from "../components/Illustration";
+import toast, { Toaster } from "react-hot-toast";
 
 export function NewRoom() {
   const { user } = useAuthor();
@@ -17,6 +18,12 @@ export function NewRoom() {
     event.preventDefault(); //Evitar recarregamento de pagina
 
     if (nameRoom.trim() === "") {
+      toast.error("Escreva o nome da sala.", {
+        style: {
+          color: "#FFFF",
+          background: "#a13434",
+        },
+      });
       return; // poderia adicionar um modal
     }
 
@@ -32,6 +39,7 @@ export function NewRoom() {
 
   return (
     <div id="path">
+      <Toaster />
       <Illustration />
       <main>
         <div id="conta">

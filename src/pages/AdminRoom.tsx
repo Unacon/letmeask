@@ -28,7 +28,7 @@ export function AdminRoom() {
     toast.error("A questão foi removida.", {
       style: {
         color: "#FFFF",
-        background: "#fd5a5a",
+        background: "#a13434",
       },
       duration: 1000,
     });

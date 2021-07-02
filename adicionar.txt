@@ -2,7 +2,7 @@
 - Tema Dark
 FEITO - Diferenciar entrada na página room para admin e usuário
 - Versão PWA
-- modal
+FEITO - modal
 - Banco de dados 
   -> Firebase Database
   -> SupaBase

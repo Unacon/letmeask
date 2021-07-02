@@ -28,7 +28,7 @@ export function Room() {
       toast.error("Escreva algo para perguntar.", {
         style: {
           color: "#FFFF",
-          background: "#fd5a5a",
+          background: "#a13434",
         },
       });
       return;
@@ -75,7 +75,7 @@ export function Room() {
       toast.error("Seu like foi removido.", {
         style: {
           color: "#FFFF",
-          background: "#fd5a5a",
+          background: "#a13434",
         },
       });
     } else {

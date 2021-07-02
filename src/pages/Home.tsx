@@ -8,6 +8,7 @@ import { database } from "../services/firebase";
 import "../assets/css/home.scss";
 import { useAuthor } from "../hooks/useAuthor";
 import { Illustration } from "../components/Illustration";
+import toast, { Toaster } from "react-hot-toast";
 
 export function Home() {
   const { user, signInWithPopup } = useAuthor();
@@ -25,18 +26,37 @@ export function Home() {
     event.preventDefault();
 
     if (codeRoom === "") {
+      toast.error("Digite o código da sala.", {
+        style: {
+          color: "#FFFF",
+          background: "#a13434",
+        },
+        duration: 1000,
+      });
       return; // modal
     }
 
     const roomRef = await database.ref(`rooms/${codeRoom}`).get();
 
     if (!roomRef.exists()) {
-      alert("Room does not exists.");
+      toast.error("Essa sala não existe.", {
+        style: {
+          color: "#FFFF",
+          background: "#a13434",
+        },
+        duration: 1000,
+      });
       return;
     }
 
     if (roomRef.val().endedAt) {
-      alert("Sala ja foi encerrada");
+      toast.error("Essa sala já foi encerrada.", {
+        style: {
+          color: "#FFFF",
+          background: "#a13434",
+        },
+        duration: 1000,
+      });
       return;
     }
 
@@ -52,6 +72,7 @@ export function Home() {
 
   return (
     <div id="path-home">
+      <Toaster />
       <Illustration />
       <main>
         <div id="conta">
