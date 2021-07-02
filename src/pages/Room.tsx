@@ -35,7 +35,13 @@ export function Room() {
     }
 
     if (!user) {
-      throw new Error("You must be logged in");
+      toast.error("Você não está logado.", {
+        style: {
+          color: "#FFFF",
+          background: "#a13434",
+        },
+      });
+      return;
     }
 
     const question = {
