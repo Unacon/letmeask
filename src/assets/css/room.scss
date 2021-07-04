@@ -29,6 +29,7 @@
   main {
     max-width: 800px;
     margin: 0 auto;
+    padding: 0rem 1rem 1rem 1rem;
 
     .room-title {
       margin: 32px 0 24px;
@@ -126,6 +127,54 @@
 
     .question-list {
       margin-top: 32px;
+
+      .question {
+        word-break: break-all;
+      }
+    }
+  }
+}
+
+/* Small Devices - Mobile Only */
+@media (max-width: 576px) {
+  #page-room {
+    .content {
+      > div {
+        #exitRoom {
+          display: none;
+        }
+        .room-code {
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Medium Devices - Tablet */
+@media (min-width: 576px) {
+  #page-room {
+    .content {
+      > div {
+        #exitRoom {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+/* Large Devices - Desktop */
+@media (min-width: 892px) {
+  #page-room {
+    .content {
+      > div {
+        #exitRoom {
+          display: inherit;
+        }
+      }
     }
   }
 }

@@ -41,13 +41,13 @@ Você pode visualizar o projeto no site através [desse link](https://letmeask-c
 
 ## 🚧 Em Contrução
 
-- Responsividade
+- ✅ Responsividade
 - Tema Dark
 - Versão PWA
 - Styles Components
-- Banco de dados 
-  - Firebase Database
+- Banco de dados
+  - ✅ Firebase Database
   - SupaBase
 
-Feito com ♥ by João Vitor 👋🏻 
+Feito com ♥ by João Vitor 👋🏻
 Obrigado a todos! ♥

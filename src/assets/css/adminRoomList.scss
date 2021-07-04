@@ -1,4 +1,4 @@
-#path-home {
+#path-room {
   display: flex;
   align-content: center;
   justify-content: space-between;
@@ -112,6 +112,67 @@
           padding: 13px 12px 13px 16px;
 
           margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
+
+/* Small Devices - Mobile Only */
+@media (max-width: 576px) {
+  #page-room {
+    header {
+      .content {
+        > div {
+          .room-code {
+            span {
+              display: none;
+            }
+          }
+          .button {
+            padding: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Medium Devices - Tablet */
+@media (min-width: 576px) {
+  #page-room {
+    header {
+      .content {
+        > div {
+          .room-code {
+            span {
+              display: none;
+            }
+          }
+          .button {
+            padding: 1rem;
+          }
+
+          #exitRoom {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Large Devices - Desktop */
+@media (min-width: 892px) {
+  #page-room {
+    header {
+      .content {
+        > div {
+          .room-code {
+            span {
+              display: inline;
+            }
+          }
         }
       }
     }

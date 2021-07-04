@@ -6,6 +6,6 @@ FEITO - modal
 - Banco de dados 
   -> Firebase Database
   -> SupaBase
-  -> Styles Components
-  -> ESLint, Prettier - video rocketseat
-  -> GitHub README (rocketseat-education/nlw-04-reactjs)
+- Styles Components
+- ESLint, Prettier - video rocketseat
+FEITO - GitHub README (rocketseat-education/nlw-04-reactjs)

@@ -52,7 +52,7 @@ export function HeaderRoom(props: HeaderRoomType) {
               Encerrar sala
             </Button>
           )}
-          <Button isOutlined onClick={handleExitRoom}>
+          <Button id="exitRoom" isOutlined onClick={handleExitRoom}>
             Sair da sala
           </Button>
         </div>
